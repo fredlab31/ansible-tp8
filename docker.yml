@@ -1,0 +1,24 @@
+---
+- name: Installation de docker
+  hosts: all
+  become: yes
+  tasks:
+
+    - name: Installation des dépendances 
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - epel-release
+        - yum-utils
+        - device-mapper-persistent-data
+        - lvm2
+        - python3
+        - docker
+
+    - name: Start et enable du daemon docker
+      service:
+        name: docker
+        state: started
+        enabled: yes
+
