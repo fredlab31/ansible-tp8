@@ -1,6 +1,7 @@
 ---
 - name: Include des secrets
   hosts: all
+  gather_facts: no
   tasks:
     - name: Include des secrets
       include_vars: "secrets/credentials.yml"

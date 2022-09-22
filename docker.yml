@@ -1,6 +1,7 @@
 ---
 - name: Installation de docker
   hosts: all
+  gather_facts: no
   become: yes
   tasks:
 

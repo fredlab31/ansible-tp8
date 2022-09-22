@@ -1,6 +1,7 @@
 ---
 - name : Install de git et clone du repo
   hosts: all
+  gather_facts: no
   become: yes
 
   tasks:
